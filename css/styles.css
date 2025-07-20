@@ -88,7 +88,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    font-family: "Poppins", sans-serif!important;
+    font-family: "Montserrat", sans-serif!important;
     font-size: 1.1rem!important;
     background-color: rgb(26, 26, 26) !important;
     color: var(--font-color) !important;
