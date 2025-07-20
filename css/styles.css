@@ -1,0 +1,1615 @@
+* {
+    margin: none;
+    padding: none;
+    box-sizing: border-box;
+}
+
+/* Prevenir overflow horizontal */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.section-width{
+    width: 100% !important;
+    max-width: 1300px !important;
+}
+
+.container, .container-fluid {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+}
+
+/* Forzar que Bootstrap no cause overflow */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+}
+
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+.col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+.col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+.col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+}
+
+/* Prevenir que cualquier elemento cause scroll horizontal */
+* {
+    max-width: 100%;
+}
+
+/* Regla específica para viewport en móvil */
+@media (max-width: 768px) {
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    html {
+        font-size: 16px !important;
+        overflow-x: hidden !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        position: relative !important;
+        width: 100% !important;
+    }
+}
+
+/* Asegurar que el navbar no cause overflow */
+.navbar {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.navbar .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+:root {
+    --font-color: #fff;
+    --background: rgb(26, 26, 26);
+    --background-secundary: rgb(20, 20, 20);
+    --color-secundary: rgba(212, 175, 55, 0.8);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif!important;
+    font-size: 1.1rem!important;
+    background-color: rgb(26, 26, 26) !important;
+    color: var(--font-color) !important;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2 {
+    font-family: "Bebas Neue", sans-serif !important;
+}
+
+h1{
+    border-bottom: 3px solid black;
+    line-height: 0.8!important;
+    letter-spacing: -0.02em!important;
+}
+
+h1:hover{
+    border-bottom: 3px solid var(--color-secundary);
+}
+
+header {
+    position: relative;
+    min-height: 100vh;
+    animation: headerFadeIn 2s ease-out;
+}
+
+@keyframes headerFadeIn {
+    0% {
+        opacity: 0;
+        filter: brightness(0.3);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+
+
+/* ===============================
+   NAVBAR PERSONALIZADO - NUEVO
+   =============================== */
+
+/* Navbar principal */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(248, 249, 250, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.8)!important;
+}
+
+/* Contenedor del navbar */
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Distribución específica de elementos */
+.navbar-brand {
+    flex: 0 0 auto;
+    order: 1;
+}
+
+.navbar-menu {
+    flex: 1;
+    order: 2;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-social {
+    flex: 0 0 auto;
+    order: 3;
+}
+
+/* Logo/Brand */
+.navbar-brand .brand-link {
+    text-decoration: none;
+}
+
+.navbar-brand h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #000;
+    font-family: "Bebas Neue", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand span {
+    color: var(--color-secundary);
+}
+
+/* Menu de navegación */
+.navbar-menu {
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row!important;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-secundary);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--color-secundary)!important;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-secundary);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Redes sociales */
+.navbar-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Ocultar redes sociales móviles en desktop */
+.mobile-social {
+    display: none;
+}
+
+.navbar-social a {
+    color: #333;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 0.3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-social a:hover {
+    color: var(--color-secundary);
+    transform: translateY(-2px);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* Botón hamburguesa */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 3px;
+}
+
+.navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Navbar compacto al hacer scroll */
+.custom-navbar.scrolled {
+    padding: 0.5rem 0;
+    background: rgba(248, 249, 250, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar.scrolled .navbar-brand h1 {
+    font-size: 1.8rem;
+}
+
+/* ===============================
+   NAVBAR RESPONSIVE
+   =============================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .navbar-menu {
+        gap: 1.5rem;
+    }
+    
+    .navbar-nav {
+        gap: 1.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    .navbar-social {
+        gap: 0.8rem;
+    }
+    
+    .navbar-social a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Correcciones globales para responsive */
+@media (max-width: 768px) {
+    * {
+        max-width: 100% !important;
+    }
+    
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin: 0 auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .navbar-container {
+        padding: 0 15px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .navbar-brand {
+        flex: 0 0 auto;
+        order: 1;
+    }
+    
+    .navbar-brand h1 {
+        font-size: 1.8rem;
+    }
+    
+    .navbar-toggle {
+        display: flex;
+        flex: 0 0 auto;
+        order: 2;
+        margin-left: auto;
+    }
+    
+    /* Ocultar redes sociales del navbar principal en móvil */
+    .navbar-container > .navbar-social {
+        display: none !important;
+    }
+    
+    .navbar-menu {
+        position: fixed;
+        top: 85px;
+        left: 0;
+        right: 0;
+        background: rgba(248, 249, 250, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        z-index: 999;
+    }
+    
+    .navbar-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navbar-nav {
+        flex-direction: column !important;
+        gap: 0 !important;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .navbar-nav li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        padding: 1.2rem 0;
+        width: 100%;
+        display: block;
+    }
+    
+    .navbar-nav .nav-link.active {
+        color: var(--color-secundary);
+        font-weight: 600;
+        background: rgba(212, 175, 55, 0.1);
+    }
+    
+    /* Correcciones adicionales para elementos problemáticos */
+    section {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .hero, .hero-content, .hero-background {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Elementos específicos que causan problemas */
+    .txt-anos {
+        margin: 0 auto !important;
+        max-width: 90% !important;
+        width: 100% !important;
+        left: auto !important;
+        right: auto !important;
+        position: relative !important;
+    }
+    
+    /* Corrección para padding excesivo en móvil */
+    .px-5 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    /* Asegurar que elementos Bootstrap no se salgan */
+    .btn-lg {
+        font-size: 1rem !important;
+        padding: 0.8rem 1.5rem !important;
+    }
+    
+    /* Footer correcciones */
+    footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Redes sociales móviles */
+    .mobile-social {
+        display: flex !important;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-social a {
+        color: #333;
+        font-size: 1.4rem;
+        padding: 0.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-social a:hover {
+        color: var(--color-secundary);
+        background: rgba(212, 175, 55, 0.1);
+        transform: scale(1.1);
+    }
+    
+    /* Animación del botón hamburguesa */
+    .navbar-toggle.active span:first-child {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .navbar-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .navbar-toggle.active span:last-child {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* ===============================
+   CORRECCIÓN FINAL - OVERFLOW
+   =============================== */
+
+/* Asegurar que NUNCA haya overflow horizontal */
+@media (max-width: 768px) {
+    html {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Forzar que todos los contenedores respeten el ancho */
+    * {
+        max-width: 100% !important;
+    }
+    
+    .container, .container-fluid, .row, section, header, main, footer {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+}
+
+/* ===============================
+   LIMPIEZA DE ESTILOS VIEJOS
+   =============================== */
+
+/* Asegurar que el contenido no se solape con el navbar fijo */
+body {
+    padding-top: 85px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 75px;
+    }
+}
+
+/* Estilos antiguos removidos - usando nuevo navbar personalizado */
+
+section {
+    margin: 130px 0;
+}
+
+/* Botón de subir mejorado */
+.buttonUp {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, var(--color-secundary), #f4d03f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    z-index: 1000;
+}
+
+.buttonUp.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.buttonUp:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.buttonUp a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.buttonUp i {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.buttonUp:hover i {
+    transform: translateY(-2px);
+}
+
+
+
+/* Hero container */
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* Imagen de fondo animada */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/pexels-thgusstavo-1813272.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+    animation: heroZoomFade 4s ease-out;
+}
+
+/* Overlay oscuro */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    z-index: 2;
+}
+
+/* Contenido del hero */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Animación: zoom + brightness + fade */
+@keyframes heroZoomFade {
+    0% {
+        transform: scale(1.2);
+        filter: brightness(0.3);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+        opacity: 1;
+    }
+}
+
+.hero-content p{
+    font-weight: 400;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.695);
+}
+
+.hero-content h2 {
+    font-size: 4rem !important;
+    max-width: 700px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.695);
+}
+
+.hero-year {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    font-weight: 600!important;
+    font-size: 1.2rem!important;
+}
+
+.hero-year {
+    position: relative;
+    display: inline-block;
+    padding: 0 60px;
+    font-weight: 600!important;
+    font-size: 1.2rem!important;
+}
+
+.hero-year::before,
+.hero-year::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-secundary);
+    transform: translateY(-50%);
+}
+
+.hero-year::before {
+    left: 0;
+}
+
+.hero-year::after {
+    right: 0;
+}
+
+/* Responsive para las líneas decorativas */
+@media (max-width: 576px) {
+    .hero-year {
+        padding: 0 40px;
+    }
+    
+    .hero-year::before,
+    .hero-year::after {
+        width: 30px;
+    }
+}
+
+/* Animaciones para el hero */
+@keyframes heroFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Animaciones del contenido del hero */
+.hero-content p:first-child {
+    animation: heroFadeIn 2s ease-out 1s both;
+}
+
+.hero-content h2 {
+    animation: heroFadeIn 2.5s ease-out 1.3s both !important;
+}
+
+.hero-content .hero-year {
+    animation: heroFadeIn 3s ease-out 1.6s both;
+}
+
+.hero-content .btn {
+    animation: heroFadeIn 3.5s ease-out 1.9s both;
+}
+
+
+/* Sobre nosotros */
+
+.border-left{
+    border-left: 3px solid var(--color-secundary);
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-top: 10px!important;
+}
+
+.txt-anos {
+    background-color: var(--background-secundary);
+    position: relative;
+    width: 100%!important;
+    max-width: 700px!important;
+    margin: 0 auto!important;
+    z-index: 10;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-secundary);
+    top: -100px;
+}
+
+.txt-anos p{
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.about-1{
+    border-right: 1px solid var(--color-secundary);
+}
+
+.about-1 p:first-child{
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: var(--color-secundary);
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif!important;
+    line-height: 0.8!important;
+}
+
+.about-1 p:last-child{
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: #fff;
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif!important;
+}
+
+.about-2 p{
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: #fff;
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif!important;
+}
+
+
+.about-3 h3{
+    font-weight: bold;
+    font-size: 2.3rem;
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif!important;
+}
+
+.imgSobre{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.title-sobre {
+    color: var(--color-secundary);
+}
+
+/* Servicios */
+
+.title {
+    color: var(--color-secundary);
+    text-align: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+}
+
+.card-about{
+    background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.005))!important;
+    transition: all 0.6s ease!important;
+    justify-content: flex-end!important;
+    overflow: hidden!important;
+    transform: translateY(130px)!important;
+}
+
+.card .card-img{
+    transition: all 0.6s ease!important;
+}
+
+
+
+.card-about:hover{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0, 0, 0, 0.005))!important;
+    justify-content: flex-end!important;
+    transform: translateY(0)!important;
+}
+
+.card:hover .card-img{
+    transform: scale(1.1)!important;
+}
+
+.box-sevicios .card {
+    transition: all 0.6s ease;
+}
+
+.box-sevicios .card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.card-about .card-text{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease!important;
+    visibility: hidden;
+}
+
+.card-about .card-title{
+    transition: all 0.5s ease!important;
+}
+
+.card-about:hover .card-text{
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: all 0.4s ease 0.1s!important;
+}
+
+.price{
+   font-family: "Bebas Neue", sans-serif!important;
+   /* color: var(--color-secundary)!important; */
+   
+}
+
+/* Video Section */
+
+.video-section {
+    margin: 0!important;
+    padding:50px 0!important;
+}
+
+.video-hero {
+    width: 100%;
+    height: 70vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../assets/barber-image-02.jpg)!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    background-attachment: fixed!important;
+    position: relative;
+    min-height: 600px;
+}
+
+.video-content {
+    z-index: 10;
+    position: relative;
+}
+
+.video-title {
+    font-family: "Bebas Neue", sans-serif!important;
+    font-size: 4rem!important;
+    color: var(--font-color);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px!important;
+}
+
+.video-subtitle {
+    font-size: 1.3rem;
+    color: var(--font-color);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    margin-bottom: 40px!important;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.video-play-btn {
+    background: none;
+    border: none;
+    color: var(--font-color);
+    font-size: 5rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    transform: scale(1);
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.8));
+}
+
+
+
+.video-play-btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 20px var(--color-secundary));
+}
+
+.play-text {
+    color: var(--font-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    margin-top: 15px!important;
+}
+
+/* Animaciones para la sección de video */
+@keyframes videoFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-content {
+    animation: videoFadeIn 2s ease-out;
+}
+
+.video-play-btn {
+    animation: videoFadeIn 2.5s ease-out;
+}
+
+
+/* Precios */
+
+.backDark {
+    background-color: var(--background-secundary);
+}
+
+/* Nuestro barbero */
+
+.cardBarber {
+    width: 90%;
+    background-color: var(--background-secundary);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -50px;
+    z-index: 10;
+    border: 1px solid var(--color-secundary);
+}
+
+.cardBarber .title{
+    font-size: 2.3rem!important;
+    font-weight: bold;
+    color: var(--color-secundary);
+    font-family: "Bebas Neue", sans-serif!important;
+    margin-bottom: 0!important;
+}
+
+.border-card{
+    border: 3px solid rgba(255, 255, 255, 0.182);
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.card-B {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.6s ease;
+    overflow: hidden;
+}
+
+.card-B img {
+    filter: sepia(0.9)!important;    
+    filter: saturate(0.5)!important;
+    transition: all 1s ease !important;
+    transform: scale(1)!important;
+}
+
+.card-B img:hover {
+    transform: scale(1.1)!important;
+    filter: saturate(1.5)!important;
+
+}
+
+
+
+
+/* Carousel */
+.back-testimonios{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url(../assets/pexels-rdne-7697208.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.carousel-inner{
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.border-container{
+    border: 3px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Sección de Contacto */
+.backDark{
+    width: 85%;
+}
+
+.backDark .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--font-color);
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+    border-radius: 0;
+}
+
+.backDark .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-secundary);
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+    color: var(--font-color);
+    transform: translateY(-2px);
+}
+
+.backDark .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+.contact-btn {
+    background: linear-gradient(45deg, var(--color-secundary), #f4d03f);
+    border: none;
+    color: #000;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(45deg, #f4d03f, var(--color-secundary));
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.contact-btn:hover::before {
+    left: 100%;
+}
+
+.reservation-container {
+    /* background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05)); */
+    /* border: 2px solid var(--color-secundary); */
+    border-radius: 15px;
+    padding: 40px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.reservation-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle, var(--color-secundary) 0%, transparent 70%); */
+    opacity: 0.05;
+    transition: all 0.6s ease;
+    overflow: hidden;
+}
+
+.reservation-container:hover::before {
+    transform: scale(1.5);
+    opacity: 0.1;
+}
+
+/* .reservation-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+    border-color: #f4d03f;
+} */
+
+.reservation-btn {
+    background: transparent;
+    border: 3px solid var(--color-secundary);
+    color: var(--color-secundary);
+    font-weight: bold;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.reservation-btn:hover {
+    background: var(--color-secundary);
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.reservation-btn i {
+    transition: transform 0.4s ease;
+}
+
+.reservation-btn:hover i {
+    transform: translateX(10px);
+}
+
+.contact-icon {
+    color: var(--color-secundary);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+}
+
+.reservation-container:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
+    color: #f4d03f;
+}
+
+.contact-title {
+    color: var(--color-secundary);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Animaciones para la sección de contacto */
+@keyframes contactFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.backDark .container > .row {
+    animation: contactFadeIn 1s ease-out;
+}
+
+/* Footer */
+
+.footer-section {
+    background: linear-gradient(135deg, var(--background-secundary) 0%, var(--background) 100%);
+    color: var(--font-color);
+    margin-top: 100px;
+}
+
+.footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    color: var(--font-color);
+    border-bottom: 3px solid var(--color-secundary);
+    line-height: 0.8;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer-logo strong {
+    color: var(--color-secundary);
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.footer-contact-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.footer-contact-info i {
+    color: var(--color-secundary);
+    width: 20px;
+}
+
+.footer-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-secundary);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: var(--color-secundary);
+    transform: translateX(5px);
+}
+
+.footer-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--color-secundary);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    width: 10px;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--font-color);
+    font-size: 1.3rem;
+    transition: all 0.4s ease;
+    text-decoration: none;
+}
+
+.footer-social-links a:hover {
+    background: var(--color-secundary);
+    border-color: var(--color-secundary);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+.newsletter-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--font-color);
+    padding: 12px 15px;
+    border-radius: 0;
+}
+
+.newsletter-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-secundary);
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+    color: var(--font-color);
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-btn {
+    background: linear-gradient(45deg, var(--color-secundary), #f4d03f);
+    border: none;
+    color: #000;
+    font-weight: bold;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+.newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(45deg, #f4d03f, var(--color-secundary));
+}
+
+.footer-bottom {
+    background: var(--background);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: var(--color-secundary);
+}
+
+.footer-legal-links .separator {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    .footer-logo {
+        font-size: 2rem;
+    }
+    
+    .footer-social-links {
+        justify-content: center;
+    }
+    
+    .footer-legal-links {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+    
+    .newsletter-signup {
+        text-align: center;
+    }
+}
+
+/* Media */
+
+@media (max-width: 768px){
+    #sobre-nosotros{
+        margin-top: -20px!important;
+    }
+
+    .txt-anos{
+        margin-top: 150px!important;
+        width: 90%!important;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;      
+        padding: 20px 0!important;
+
+    }
+
+    .about-1{
+        border:none!important;
+    }
+    .about-1 p{
+        font-size: 2.5rem!important;
+    }
+
+    .about-2{
+        display: none;
+    }
+
+    .img-anos{
+        display: none;
+    }
+
+    .imgSobre{
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 300px !important;
+        object-fit: cover;
+        margin: 20px 0;
+        overflow: hidden !important;
+    }
+
+    .flexNav{
+        display: block;
+        justify-content: start;
+    }
+
+    /* Servicios Section Responsive */
+    .box-sevicios {
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+
+    .box-sevicios .card {
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .card-about {
+        transform: translateY(100px) !important;
+    }
+
+    .card-about:hover {
+        transform: translateY(0) !important;
+    }
+
+    .card-B{
+        margin-bottom: 50px!important;
+    }
+     
+    /* Video Section Responsive */
+    .video-hero {
+        height: 70vh;
+        min-height: 500px;
+        background-attachment: scroll;
+    }
+
+    .video-title {
+        font-size: 2.5rem!important;
+    }
+
+    .video-subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .video-play-btn {
+        font-size: 4rem;
+    }
+
+    .play-text {
+        font-size: 1rem;
+    }
+
+    /* Contacto Section Responsive */
+    .reservation-container {
+        margin-top: 30px;
+        padding: 30px 20px;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+
+    .reservation-btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    .contact-icon {
+        font-size: 3rem;
+    }
+    
+}
